@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detection Result</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="result-page">
+
+  <!-- soft background -->
+  <div class="result-bg"></div>
+
+  <div class="result-wrapper">
+
+    <div class="result-card">
+      <div class="result-header">
+        <h1>Detection Result</h1>
+        <p class="sub">Your file has been analyzed successfully.</p>
+      </div>
+
+      <div class="result-meta">
+        <div class="meta-item">
+          <span class="meta-label">File Type</span>
+          <span class="meta-value">{{ file_type }}</span>
+        </div>
+
+        {% if filename %}
+        <div class="meta-item">
+          <span class="meta-label">File Name</span>
+          <span class="meta-value">{{ filename }}</span>
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="result-status {{ 'ok' if status == 'success' else 'bad' }}">
+        <div class="status-icon">
+          {% if status == 'success' %}✅{% else %}⚠️{% endif %}
+        </div>
+        <div class="status-text">
+          <div class="status-title">{{ result }}</div>
+          <div class="status-sub">
+            {% if status == 'success' %}
+              If you want, you can upload another file to test.
+            {% else %}
+              Please try again with a valid file/type.
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <a class="btn-outline" href="/">⬅ Back to Home</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

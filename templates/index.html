@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI vs Human Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="upload-page">
+
+    <div class="upload-bg"></div>
+
+    <div class="upload-wrapper">
+        <h2 class="upload-title">Upload Image / Video / Text to Detect</h2>
+
+        <form class="upload-form" method="POST" enctype="multipart/form-data" action="/predict">
+            <!-- Hidden file input -->
+            <input type="file" name="file" id="fileInput" required>
+
+            <!-- Styled file upload button -->
+            <label for="fileInput" class="custom-file-upload">
+                <span class="icon">☁️</span>
+                <span>Choose file</span>
+            </label>
+
+            <!-- Show file name -->
+            <p class="file-name" id="fileName">No file chosen</p>
+
+            <!-- File type selection -->
+            <select name="file_type" class="upload-select">
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+                <option value="text">Text</option>
+            </select>
+
+            <!-- Submit button -->
+            <button type="submit" class="upload-btn">Detect</button>
+        </form>
+    </div>
+
+    <script>
+      const fileInput = document.getElementById("fileInput");
+      const fileName = document.getElementById("fileName");
+
+      fileInput.addEventListener("change", () => {
+        fileName.textContent = fileInput.files.length
+          ? fileInput.files[0].name
+          : "No file chosen";
+      });
+    </script>
+</body>
+</html>
