@@ -71,7 +71,7 @@ A full information assurance policy is included:
 📄 Content_Authenticity_Policy.pdf
 
 📌 Author
-Sufyan-Ayaz-&-Ahmed-Farzan
+Sufyan-Ayaz,Ahmed-Farzan-&-Abdul-Basit
 🎓 Built for ethical AI detection, academic submission, or portfolio use.
 
 🌐 License
